@@ -1,0 +1,14 @@
+/**
+* ABSOLUTE CONNECTION WRAPPER
+*/
+.absolute-connection-wrapper {
+  height: 100%;
+
+  @import 'blank';
+  @import 'header';
+  @import 'sidebar';
+  @import 'content';
+
+  @import 'page/login';
+  @import 'page/dashboard';
+}

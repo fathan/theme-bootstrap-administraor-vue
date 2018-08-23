@@ -1,0 +1,25 @@
+.form-control {
+  margin-bottom: 10px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #999999!important;
+  outline: 0!important;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)!important;
+  box-shadow: 0 0 0 0rem rgba(0, 123, 255, 0.25)!important;
+}
+
+input.form-control,
+select.form-control,
+textarea.form-control {
+  border-radius: 0;
+}
+
+// VUE TABLES 2
+.VueTables__search-field{
+  label {
+    display: none!important;
+  }
+}

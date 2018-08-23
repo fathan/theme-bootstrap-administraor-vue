@@ -1,0 +1,225 @@
+.header--top {
+  background-color: $green-dark-medium;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: -6px;
+  position: fixed;
+  z-index: 999;
+
+  &__tagline {
+    color: $white;
+    letter-spacing: 1px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  &__searching-bar {
+    display: block;
+    float: right;
+    padding: 9px;
+    width: 510px;
+
+    .ico-search{
+      padding: 3.55px 10px;
+      background-color: #FFFFFF;
+      float: left;
+      cursor: pointer;
+      
+      i {
+        color: #000000;
+      }
+    }
+
+    input{
+      border-radius: 0;
+      border: 0;
+      width: 85.3%;
+      float: left;
+      outline: none;
+    }
+
+    .form-control {
+      margin-bottom: 0;
+
+      &:focus {
+        border: 1px solid $white!important;
+      }
+    }
+
+    .ico-reset{
+      padding: 3.55px 10px;
+      background-color: #FFFFFF;
+      float: right;
+      cursor: pointer;
+      
+      i {
+        color: #000000;
+      }
+    }
+  }
+
+  &__icon-menu {
+    display: block;
+    float: right;
+
+    .list-menu {
+      float: left;
+      width: 30px;
+      padding: 12px;
+      border-right: 1px solid rgba(128,128,128,.4);
+      display: inline-table;
+      background-color: transparent;
+      cursor: pointer;
+      -webkit-transition: 1s ease-out;
+      -moz-transition: 1s ease-out;
+      -o-transition: 1s ease-out;
+      transition: 1s ease-out;
+
+      &:hover {
+        background-color: #3d3d3d;
+      }
+
+      i {
+        font-size: 20px;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  &__profile-menu {
+    float: right;
+    width: 180px;
+    overflow: hidden;
+    display: block;
+    padding: 4px 15px;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-transition: 1s ease-out;
+    -moz-transition: 1s ease-out;
+    -o-transition: 1s ease-out;
+    transition: 1s ease-out;
+
+    &:hover {
+      background-color: #3d3d3d;
+    }
+
+    .information {
+      float: left;
+      width: 75%;
+      margin-top: 4px;
+
+      .email {
+        color: $white;
+        font-size: 12px;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .username {
+        color: $white;
+        font-size: 12px;
+        text-transform: uppercase;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .avatar {
+      float: right;
+      width: 25%;
+
+      .image {
+        width: 40px;
+        height: 40px;
+        background-color: $white;
+        border-radius: 50px;
+        margin-top: 2px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-profile {
+  position: fixed;
+  top: 3.1em;
+  z-index: 999;
+  right: 0;
+  background: $white;
+  width: 220px;
+  box-shadow: 0px 0px 2px 0px;
+
+  &__list-menu {
+    width: 100%;
+    display: inline-block;
+
+    .list {
+      width: 100%;
+      border-bottom: 1px solid #CCCCCC;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-bottom: -7px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $green-dark-medium;
+        -webkit-transition: 1s ease-out;
+        -moz-transition: 1s ease-out;
+        -o-transition: 1s ease-out;
+        transition: 1s ease-out;
+        
+        .title {
+          span {
+            color: $white;
+          }
+        }
+
+        .icon {
+          i {
+            color: $white;
+          }
+        }
+      }
+
+      &:last-child {
+        border: 0;
+      }
+
+      .title {
+        float: left;
+        width: 80%;
+        margin-top: 5px;
+  
+        span {
+          font-size: 12px;
+          color: $black;
+          margin-left: 10px;
+        }
+      }
+  
+      .icon {
+        float: right;
+        width: 30px;
+        height: 30px;
+        margin-top: 5px;
+  
+        i {
+          font-size: 16px;
+          color: $green-dark-medium;
+        }
+      }
+    }
+  }
+}
