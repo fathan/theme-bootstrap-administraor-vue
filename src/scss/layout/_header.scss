@@ -1,5 +1,5 @@
 .header--top {
-  background-color: $green-dark-medium;
+  background-color: $grey-dark;
   display: inline-block;
   width: 100%;
   margin-bottom: -6px;
@@ -7,7 +7,7 @@
   z-index: 999;
 
   &__tagline {
-    color: $white;
+    color: #55b3ff;
     letter-spacing: 1px;
     padding: 10px;
     font-size: 20px;
@@ -15,6 +15,10 @@
     font-weight: 400;
     cursor: pointer;
     margin-left: 10px;
+
+    &:hover {
+      background-color: #3d3d3d;
+    }
   }
 
   &__searching-bar {
@@ -59,6 +63,20 @@
       i {
         color: #000000;
       }
+    }
+  }
+
+  &__welcome-text {
+    display: block;
+    float: right;
+    padding: 9px;
+    width: 510px;
+
+    span {
+      font-size: 14px;
+      color: $white;
+      float: right;
+      margin-top: 5px;
     }
   }
 
@@ -174,11 +192,11 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $green-dark-medium;
-        -webkit-transition: 1s ease-out;
-        -moz-transition: 1s ease-out;
-        -o-transition: 1s ease-out;
-        transition: 1s ease-out;
+        background-color: $grey-dark;
+        // -webkit-transition: 1s ease-out;
+        // -moz-transition: 1s ease-out;
+        // -o-transition: 1s ease-out;
+        // transition: 1s ease-out;
         
         .title {
           span {
@@ -217,7 +235,7 @@
   
         i {
           font-size: 16px;
-          color: $green-dark-medium;
+          color: $grey-dark;
         }
       }
     }

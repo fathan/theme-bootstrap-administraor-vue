@@ -1,46 +1,18 @@
 <template>
-  <transition name="slide-fade">
-    <div class="big-menu" v-if="menuBig">
-      <div
-        class="big-menu__close-button"
-        @click="closeBigMenu"
-      >
-        <i class="icon-close"></i>
+  <div class="big-menu" v-if="menuBig">
+    <div class="big-menu__list-menu">
+      <div class="title-top">
+        <span>All Menu</span>
+        <i class="icon-list"></i>
       </div>
-      <div class="big-menu__list-menu">
-        <div class="title-top">
-          Module 1 - 10
-        </div>
-        <div
-          class="list"
-          v-for="i in 10"
-          :key="i"
-        >
-          <div class="list__icon-left">
-            <i class="icon-check"></i>
-          </div>
-          <div class="list__name">
-            Module {{i}}
-          </div>
-          <div class="list__icon-right">
-            <i class="icon-list"></i>
-          </div>
-        </div>
-      </div>
-      <div class="big-menu__list-menu">
-        <div class="title-top">
-          Module 11 - 20
-        </div>
+      <div class="box-lists">
         <div
           class="list"
           v-for="i in 20"
           :key="i"
         >
-          <div class="list__icon-left">
-            <i class="icon-check"></i>
-          </div>
           <div class="list__name">
-            Module {{i}}
+            Menu {{i}}
           </div>
           <div class="list__icon-right">
             <i class="icon-list"></i>
@@ -48,7 +20,51 @@
         </div>
       </div>
     </div>
-  </transition>
+    <div class="big-menu__sub-list-menu">
+      <div class="filtering">
+        <div class="pull--left">
+          <b-form-input size="sm" placeholder="Filter"></b-form-input>
+        </div>
+        <div class="pull--right">
+          <span class="filtering__ex-col">Collapse All</span> | <span class="filtering__ex-col">Expand All</span>
+        </div>
+      </div>
+      <div class="box-lists">
+        <div
+          v-for="i in 5"
+          :key="i"
+        >
+          <div class="title-top">
+            <span>Event Submenu {{ i }} (10)</span>
+            <hr>
+            <div class="icon-right">
+              <i class="icon-arrow-down"></i>
+            </div>
+          </div>
+          <div
+            class="list"
+            v-for="f in 10"
+            :key="f"
+          >
+            <div class="list__name">
+              Sub Menu {{f}}
+            </div>
+            <div v-if="i === 1">
+              <div class="list__icon-right is-favorite">
+                <i class="icon-star"></i>
+              </div>
+            </div>
+            <div v-else>
+              <div class="list__icon-right">
+                <i class="icon-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="mg-bottom--sub-list-menu"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

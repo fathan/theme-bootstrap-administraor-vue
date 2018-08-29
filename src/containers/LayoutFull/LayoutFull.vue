@@ -2,7 +2,7 @@
   <div class="absolute-connection-wrapper">
     <header-app></header-app>
     <sidebar-app></sidebar-app>
-    <div class="content-app">
+    <div class="content-app" :style="{ paddingLeft: paddingLeft }">
       <big-menu></big-menu>
       <router-view></router-view>
     </div>
@@ -19,6 +19,11 @@ export default {
     HeaderApp,
     SidebarApp,
     BigMenu
+  },
+  computed: {
+    paddingLeft () {
+      return this.$store.getters.paddingLeftContent
+    }
   }
 }
 </script>

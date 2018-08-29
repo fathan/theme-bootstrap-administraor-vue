@@ -3,7 +3,7 @@
     <div class="header--top">
       <div class="pull--left">
         <div class="header--top__tagline">
-          PT. Absolute Connection
+          ICON PAMS
         </div>
       </div>
       <div class="pull--right">
@@ -36,7 +36,7 @@
             <i class="icon-graph"></i>
           </div>
         </div>
-        <div class="header--top__searching-bar">
+        <!-- <div class="header--top__searching-bar">
           <div class="ico-search">
             <i class="icon-magnifier"></i>
           </div>
@@ -44,6 +44,9 @@
           <div class="ico-reset">
             <i class="icon-close"></i>
           </div>
+        </div> -->
+        <div class="header--top__welcome-text">
+          <span>Welcome - PT. LIPPO MALL</span>
         </div>
       </div>
     </div>

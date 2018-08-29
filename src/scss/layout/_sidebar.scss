@@ -1,10 +1,47 @@
 .sidebar-app {
-  background-color: $green-ligth;
+  background-color: $grey-dark-medium;
   height: 100%;
   float: left;
   position: fixed;
   z-index: 99;
   margin-top: 3.1em;
+
+  &__divider-favorite {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+
+    .icon {
+      background-color: $grey-dark-medium;
+      width: 30px;
+      height: 30px;
+      color: #FFF;
+      float: left;
+      margin-left: 8px;
+      margin-right: 0px;
+      text-align: center;
+
+      i {
+        color: #FFF;
+      }
+    }
+
+    .title {
+      background-color: $grey-dark-medium;
+      font-size: 10px;
+      padding: 5px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      float: left;
+    }
+
+    hr {
+      margin-top: 12px;
+      margin-bottom: 0px;
+      border: 0;
+      border-top: 1px solid rgb(61, 61, 61);
+    }
+  }
 
   &__hide-text-labels {
     display: inline-block;
@@ -25,19 +62,19 @@
     }
   }
 
-  &__box-menu {
-    overflow-y: auto;
-    height: 100%;
+  &__box-menu-fixed {
+    display: inline-block;
+    width: 100%;
 
     .list-menus {
       width: 100%;
       display: inline-block;
       cursor: pointer;
-      padding: 10px 0px;
-      -webkit-transition: 1s ease-out;
-      -moz-transition: 1s ease-out;
-      -o-transition: 1s ease-out;
-      transition: 1s ease-out;
+      padding: 8px 0px;
+      // -webkit-transition: 1s ease-out;
+      // -moz-transition: 1s ease-out;
+      // -o-transition: 1s ease-out;
+      // transition: 1s ease-out;
       margin-bottom: -6px;
   
       &:hover {
@@ -45,13 +82,75 @@
       }
   
       .icon {
-        width: 25%;
+        width: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: 15px;
         float: left;
         text-align: center;
   
         i {
           font-size: 15px;
-          color: #f0ff00;
+          color: #FFF;
+        }
+      }
+  
+      .text {
+        float: left;
+        width: 72%;
+  
+        span {
+          font-size: 12px;
+          color: $white;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  &__box-menu {
+    overflow-y: auto;
+    height: 75%;
+
+    &::-webkit-scrollbar {
+      width: 0.5em;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    }
+
+    .list-menus {
+      width: 100%;
+      display: inline-block;
+      cursor: pointer;
+      padding: 8px 0px;
+      // -webkit-transition: 1s ease-out;
+      // -moz-transition: 1s ease-out;
+      // -o-transition: 1s ease-out;
+      // transition: 1s ease-out;
+      margin-bottom: -6px;
+  
+      &:hover {
+        background-color: #3d3d3d;
+      }
+  
+      .icon {
+        width: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: 15px;
+        float: left;
+        text-align: center;
+  
+        i {
+          font-size: 15px;
+          color: #ffb43a;
         }
       }
   
@@ -71,11 +170,12 @@
 
 .big-menu {
   position: absolute;
-  background-color: $white;
-  width: 60%;
-  height: 97%;
+  background-color: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
   box-shadow: 0px 0px 2px 0px;
-  overflow-y: auto;
+  max-width: 100%;
+  overflow-x: hidden;
   z-index: 88;
 
   &__close-button {
@@ -98,50 +198,228 @@
   }
 
   &__list-menu {
-    width: 100%;
+    width: 300px;
+    height: 95%;
+    position: fixed;
     display: inline-block;
+    float: left;
+    background-color: $white;
 
     .title-top {
       font-size: 20px;
       color: #000000;
       padding-bottom: 10px;
-      border-bottom: 1px solid #3d3d3d;
-      margin: 15px;
-    }
+      border-bottom: 1px solid #d7d7d7;
+      margin: 10px;
+      padding: 13px 0;
 
-    .list {
-      float: left;
-      width: 45%;
-      padding: 10px;
-      cursor: pointer;
-      margin: 15px;
-      margin-bottom: 0;
-
-      &:hover {
-        background-color: #F5F5F5;
+      span {
+        font-weight: 600;
+        font-size: 16px;
       }
 
-      &__icon-left {
-        float: left;
-        padding: 0px 10px;
+      i {
+        float: right;
+        margin-top: 5px;
+      }
+    }
 
-        i {
-          font-size: 20px;
+    .box-lists {
+      overflow-y: auto;
+      display: block;
+      height: 80%;
+      position: absolute;
+
+      &::-webkit-scrollbar {
+        width: 0.5em;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+      }
+
+      .list {
+        float: left;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 7px 10px;
+
+        &:hover {
+          background-color: #F5F5F5;
+        }
+
+        &__icon-left {
+          float: left;
+          padding: 0px 10px;
+
+          i {
+            font-size: 20px;
+            color: #3d3d3d;
+          }
+        }
+
+        &__name {
+          float: left;
+          font-size: 14px;
+          color: #000000;
+        }
+
+        &__icon-right {
+          float: right;
+          font-size: 14px;
           color: #3d3d3d;
         }
       }
+    }
+  }
 
-      &__name {
-        float: left;
+  &__sub-list-menu {
+    width: 500px;
+    height: 95%;
+    display: inline-block;
+    position: fixed;
+    float: left;
+    margin-left: 300px;
+    border-left: 1px solid #d7d7d7;
+    background-color: #FFFFFF;
+    
+    .filtering {
+      display: inline-block;
+      width: 93%;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d7d7d7;
+      margin: 15px;
+
+      &__ex-col {
         font-size: 14px;
-        color: #000000;
+        color: #000;
+        cursor: pointer;
+        margin-top: 8px;
+        display: inline-block;
+
+        &:hover {
+          color: rgb(17, 0, 255);
+        }
+      }
+    }
+
+    .box-lists {
+      overflow-y: auto;
+      display: block;
+      width: 96%;
+      height: 80%;
+      position: absolute;
+
+      &::-webkit-scrollbar {
+        width: 0.5em;
       }
 
-      &__icon-right {
-        float: right;
-        font-size: 14px;
-        color: #3d3d3d;
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+      }
+
+      .title-top {
+        display: inline-block;
+        padding: 0px 0px;
+        padding-left: 13px;
+        padding-right: 10px;
+        width: 100%;
+
+        &:hover {
+          background-color: #F5F5F5;
+          cursor: pointer;
+
+          span {
+            background: #F5F5F5;
+          }
+
+          .icon-right {
+            background-color: #F5F5F5;
+          }
+        }
+
+        span {
+          font-size: 13px;
+          color: #000;
+          float: left;
+          background: #FFFFFF;
+          padding: 0px 0;
+          padding-right: 10px;
+          margin-top: 5px;
+        }
+
+        hr {
+          margin-top: 15px;
+          margin-bottom: 0;
+          border: 0;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-right {
+          float: right;
+          margin-top: -8px;
+          background-color: #FFF;
+          padding: 0px 0px;
+          padding-left: 10px;
+          font-size: 10px;
+        }
+      }
+
+      .list {
+        float: left;
+        width: 50%;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 5px 10px;
+        padding-left: 14px;
+
+        &:hover {
+          background-color: #F5F5F5;
+        }
+
+        &__icon-left {
+          float: left;
+          padding: 0px 10px;
+
+          i {
+            font-size: 20px;
+            color: #3d3d3d;
+          }
+        }
+
+        &__name {
+          float: left;
+          font-size: 14px;
+          color: #000000;
+        }
+
+        &__icon-right {
+          float: right;
+          font-size: 14px;
+          color: #3d3d3d;
+
+          &.is-favorite {
+            color: #ff9600;
+          }
+        }
       }
     }
   }
+}
+
+.mg-bottom--sub-list-menu {
+  margin-bottom: 5px;
+  display: inline-block;
+  width: 100%;
 }

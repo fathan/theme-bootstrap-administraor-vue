@@ -4,16 +4,11 @@
       <div class="header--content__title">
         Dashboard
       </div>
-      <div class="header--content__breadcrumbs">
-        Dashboard
-      </div>
     </div>
     <div class="content-app__body">
-      <h5>Welcome, <strong>Fathan Rohman</strong></h5>
-      <br/>
       <b-container>
         <b-row>
-          <b-col cols="12">
+          <!-- <b-col cols="12">
             <b-row text-center>
               <b-col>
                 <div class="counter">
@@ -91,7 +86,7 @@
                 </b-col>
               </b-row>
             </b-container>
-          </b-col>
+          </b-col> -->
         </b-row>
       </b-container>
     </div>

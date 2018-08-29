@@ -10,6 +10,7 @@ import Dashboard from '@/views/Dashboard/Dashboard'
 import DataTable from '@/views/SampleData/DataTable'
 import DataInput from '@/views/SampleData/DataInput'
 import Print from '@/views/SampleData/Print'
+import Blog from '@/views/SampleData/Blog'
 
 import SignIn from '@/views/Authentication/SignIn/SignIn'
 import PageNotFound from '@/views/PageNotFound/PageNotFound'
@@ -49,6 +50,12 @@ export default new Router({
           path: '/sample-print',
           name: 'Sample Print',
           component: Print,
+          meta: { requiresAuth: true }
+        },
+        {
+          path: '/blog',
+          name: 'Blog',
+          component: Blog,
           meta: { requiresAuth: true }
         }
       ]
